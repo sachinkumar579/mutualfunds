@@ -5,64 +5,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="index.js"></script>
+    <script src="index.js" type="module" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>Quant Active Fund Portfolio</title>
 </head>
 
 <body>
+
+   <select id="dropdown" onchange="updateFund()">
+    <option value="q" selected>Quant Active Fund</option>
+    <option value="p">PGIM INDIA Flexi Cap Fund</option>
+    <option value="n">NAV-Expense Ratio</option>
+    <option value="c">NAV Comparison</option>   
+   </select>
+
     <div id="container" class="container">
+        <div id="q" style="display:none">
         <h2>Quant Active Fund</h2>
-        <img src="main.png" alt="Quant Active Fund Portfolio">
-        <hr size="2" width="90%" color="black">
+        <img src="quantactivefund.png" alt="Quant Active Fund Portfolio">
         <br><br><br>
-        <img src="QuantComparison.png" alt="Quant Comparison">
-        <hr size="2" width="90%" color="black">
-        <br><br><br>
-        <h2>Fund Managers</h2>
-        <img src="FundManagers.png" alt="Fund Managers">
-        <hr size="4" width="90%" color="red">
-        <br><br><br>
+        </div>
+        <div id="p" style="display:none">
         <h2>PGIM India Flexi Cap Fund</h2>
         <img src="pginflexicapfund.png" alt="PGIM Flexi Cap Fund">
-        <hr size="2" width="90%" color="black">
+        <br><br><br>  
+        </div>  
+        <div id="n" style="display:none">
+        <h2>NAV-Expense Ratio</h2>
+        <img src="nav-expenseratio.png" alt="NAV-Expense Ratio">
         <br><br><br>
-        <img src="pgimflexicapnav.png" alt="PGIM Flexi Cap Fund NAV">
-        <br><br><br>
-        <hr size="2" width="90%" color="black">
-        <br><br><br>
-        <h2>Fund Manager</h2>
-        <img src="pgimfundmanager.png" alt="PGIM Fund Managers">
-        <br><br><br>
-        <hr size="4" width="90%" color="red">
-        <br><br><br>
-        <h2>CAGR 1 YEAR - Nifty vs PGIM Flexi vs QUANT active</h2>
-        <hr size="2" width="40%" color="black">
-        <br><br><br>
-        <img src="cagr1year.png" alt="CAGR 1 Year">
-        <br><br><br>
-        <h2>CAGR 3 YEAR - Nifty vs PGIM Flexi vs QUANT active</h2>
-        <hr size="2" width="40%" color="black">
-        <br><br><br>
-        <img src="cagr3year.png" alt="CAGR 3 Year">
-        <br><br><br>
-        <h2>CAGR 5 YEAR - Nifty vs PGIM Flexi vs QUANT active</h2>
-        <hr size="2" width="40%" color="black">
-        <br><br><br>
-        <img src="cagr5year.png" alt="CAGR 5 Year">
+        </div>
+        <div id="c" style="display:none">
+        <h2>NAV-Expense Ratio</h2>
+        <img src="navcomparison.png" alt="NAV Comparison">
+        </div>
     </div>
 
     <footer>
         <p>Sources</p>
         <p><a href="https://quantmutual.com">Quant Mutual Fund</a></p>
         <p><a href="https://www.pgimindiamf.com/">PGIM Mutual Fund</a></p>
-        <p><a
-                href="https://groww.in/mutual-funds/compare/uti-nifty-fund-direct-growth-vs-dhfl-pramerica-diversified-equity-fund-direct-growth-vs-escorts-growth-plan-direct-growth">GROWW
-                Comparison</a></p>
-        <p><a href="https://www.linkedin.com/">LinkedIn</a></p>
     </footer>
 
 </body>
 
+<script>
+
+updateFund();
+
+function updateFund() {
+    let dropdown = document.getElementById("dropdown");
+    let quant = document.getElementById("q");
+    let pgim = document.getElementById("p");
+    let nav = document.getElementById("n");
+    let navcomparison = document.getElementById("c");
   
+    pgim.style = "display:none";
+    quant.style = "display:none";
+    nav.style = "display:none";
+    navcomparison.style = "display:none";
+
+    if (dropdown.value == "q") {
+      quant.style = "display:block";
+    }
+    else if (dropdown.value == "p") {
+      pgim.style = "display:block";
+    } else if (dropdown.value == "n") {
+        nav.style = "display:block";
+    } else if (dropdown.value == "c") {
+        navcomparison.style = "display:block";
+    }
+
+
+
+
+  }
+</script>
+  
+
 </html>
