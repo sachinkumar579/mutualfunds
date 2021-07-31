@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+   
    <select id="dropdown" onchange="updateFund()" class="dropdown">
     <option value="q" selected>Quant Active Fund</option>
     <option value="p">PGIM INDIA Flexi Cap Fund</option>
@@ -22,22 +22,22 @@
     <div id="container" class="container">
         <div id="q" style="display:none">
         <h2>Quant Active Fund</h2>
-        <img src="quantactivefund.png" alt="Quant Active Fund Portfolio">
+        <img src="quantactivefund.png" alt="Quant Active Fund Portfolio" style="width:100%">
         <br><br><br>
         </div>
         <div id="p" style="display:none">
         <h2>PGIM India Flexi Cap Fund</h2>
-        <img src="pginflexicapfund.png" alt="PGIM Flexi Cap Fund">
+        <img src="pginflexicapfund.png" alt="PGIM Flexi Cap Fund" style="width:100%">
         <br><br><br>  
         </div>  
         <div id="n" style="display:none">
         <h2>NAV-Expense Ratio</h2>
-        <img src="nav-expenseratio.png" alt="NAV-Expense Ratio">
+        <img src="nav-expenseratio.png" alt="NAV-Expense Ratio"style="width:100%">
         <br><br><br>
         </div>
         <div id="c" style="display:none">
         <h2>NAV-Expense Ratio</h2>
-        <img src="navcomparison.png" alt="NAV Comparison">
+        <img src="navcomparison.png" alt="NAV Comparison"style="width:100%">
         </div>
     </div>
 
@@ -75,6 +75,8 @@ function updateFund() {
     } else if (dropdown.value == "c") {
         navcomparison.style = "display:block";
     }
+
+
 
 
   }
