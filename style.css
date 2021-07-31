@@ -5,4 +5,6 @@
 
 .dropdown {
   background-color: rgb(170, 223, 188);
+  width: 200px;
+  padding: 5px;
 }
